@@ -71,7 +71,7 @@ header p {
 .menu-toggle span {
     width: 100%;
     height: 4px;
-    background-color: #000000; /* Changé de #ffffff à #000000 pour des lignes noires */
+    background-color: #000000;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
