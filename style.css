@@ -54,69 +54,26 @@ header p {
     margin-top: 10px;
 }
 
-/* Styles pour le bouton hamburger */
-.menu-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1002; /* Augmenté pour être au-dessus de tout */
-    cursor: pointer;
-    width: 50px; /* Augmenté pour une meilleure zone cliquable */
-    height: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 5px; /* Ajouté pour une zone tactile plus large */
-}
-
-.menu-toggle span {
-    width: 100%;
-    height: 5px; /* Légèrement plus épais pour la visibilité */
-    background-color: #000000; /* Changé à noir comme demandé */
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-}
-
-/* Styles pour le menu de navigation */
+/* Styles pour le menu de navigation horizontal */
 .nav-menu {
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: -100%;
-    width: 80%; /* Largeur adaptée pour mobile */
-    max-width: 300px; /* Limite pour les grands écrans */
-    height: 100%;
-    background: #333;
-    z-index: 1001; /* Juste en dessous du bouton hamburger */
-    transition: left 0.3s ease;
-    padding-top: 80px; /* Ajusté pour éviter le chevauchement avec le bouton */
-}
-
-.nav-menu.active {
     left: 0;
+    width: 100%;
+    background: #333; /* Fond gris foncé pour le menu */
+    z-index: 2;
+    padding: 15px 20px;
 }
 
 .nav-menu ul {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 20px;
+    justify-content: center; /* Centrer les liens horizontalement */
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
 }
 
 .nav-menu ul li {
-    margin: 20px 0;
+    margin: 0 20px;
 }
 
 .nav-menu ul li a {
@@ -127,7 +84,7 @@ header p {
 }
 
 .nav-menu ul li a:hover {
-    color: #ff9800;
+    color: #ff9800; /* Orange au survol */
 }
 
 section {
@@ -265,21 +222,18 @@ footer {
     header h1 {
         font-size: 2rem;
     }
-    .menu-toggle {
-        top: 15px;
-        left: 15px;
-        width: 40px;
-        height: 30px;
+    .nav-menu ul {
+        flex-direction: column; /* Menu vertical sur mobile */
+        align-items: center;
     }
-    .nav-menu {
-        width: 80%;
-        max-width: 250px;
+    .nav-menu ul li {
+        margin: 10px 0;
     }
     .nav-menu ul li a {
         font-size: 1rem;
     }
     section {
-        padding-top: 60px;
+        padding-top: 100px; /* Espace pour le menu fixe */
     }
     .intro-section img, .service-image {
         max-width: 200px;
