@@ -56,30 +56,33 @@ header p {
 
 /* Styles pour le menu de navigation horizontal */
 .nav-menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: #333; /* Fond gris foncé pour le menu */
     z-index: 2;
-    padding: 15px 20px;
+    padding: 10px 15px;
 }
 
 .nav-menu ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Centrer les liens horizontalement */
-    flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
+    flex-direction: row; /* Toujours horizontal */
+    justify-content: center; /* Centrer les liens */
+    align-items: center;
+    flex-wrap: nowrap; /* Empêche le retour à la ligne */
 }
 
 .nav-menu ul li {
-    margin: 0 20px;
+    margin: 0 5px; /* Marges réduites pour compacité */
 }
 
 .nav-menu ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 0.9rem; /* Taille réduite pour mobile */
+    padding: 8px 10px; /* Zone cliquable suffisante */
     transition: color 0.3s ease;
 }
 
@@ -88,7 +91,7 @@ header p {
 }
 
 section {
-    padding: 50px 20px;
+    padding: 60px 20px 50px; /* Espace pour le menu fixe */
     text-align: center;
 }
 
@@ -222,18 +225,12 @@ footer {
     header h1 {
         font-size: 2rem;
     }
-    .nav-menu ul {
-        flex-direction: column; /* Menu vertical sur mobile */
-        align-items: center;
-    }
-    .nav-menu ul li {
-        margin: 10px 0;
-    }
     .nav-menu ul li a {
-        font-size: 1rem;
+        font-size: 0.8rem; /* Encore plus petit pour petits écrans */
+        padding: 6px 8px;
     }
     section {
-        padding-top: 100px; /* Espace pour le menu fixe */
+        padding-top: 50px; /* Ajusté pour menu compact */
     }
     .intro-section img, .service-image {
         max-width: 200px;
@@ -247,6 +244,10 @@ footer {
     }
     header h1 {
         font-size: 3.5rem;
+    }
+    .nav-menu ul li a {
+        font-size: 1rem; /* Taille légèrement plus grande pour desktop */
+        padding: 10px 15px;
     }
     section {
         max-width: 1200px;
