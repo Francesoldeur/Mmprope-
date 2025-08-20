@@ -113,7 +113,12 @@
             const navMenu = document.querySelector('.nav-menu');
 
             if (menuToggle && navMenu) {
+                // Gérer les clics et les événements tactiles pour mobile
                 menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                menuToggle.addEventListener('touchstart', () => {
                     menuToggle.classList.toggle('active');
                     navMenu.classList.toggle('active');
                 });
