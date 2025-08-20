@@ -54,35 +54,37 @@ header p {
     margin-top: 10px;
 }
 
-/* Styles pour le menu de navigation horizontal */
+/* Menu de navigation horizontal */
 .nav-menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #333; /* Fond gris foncé pour le menu */
-    z-index: 2;
-    padding: 10px 15px;
+    background: #333; /* Fond gris foncé */
+    z-index: 1000; /* Au-dessus de tout */
+    padding: 8px 10px;
 }
 
 .nav-menu ul {
     list-style: none;
     display: flex;
-    flex-direction: row; /* Toujours horizontal */
-    justify-content: center; /* Centrer les liens */
+    flex-direction: row !important; /* Forcer horizontal */
+    flex-wrap: nowrap; /* Pas de retour à la ligne */
+    justify-content: center;
     align-items: center;
-    flex-wrap: nowrap; /* Empêche le retour à la ligne */
 }
 
 .nav-menu ul li {
-    margin: 0 5px; /* Marges réduites pour compacité */
+    margin: 0 2px; /* Marges minimales */
 }
 
 .nav-menu ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.9rem; /* Taille réduite pour mobile */
-    padding: 8px 10px; /* Zone cliquable suffisante */
+    font-size: 0.7rem; /* Très compact */
+    padding: 8px 10px; /* Zone cliquable */
+    white-space: nowrap; /* Pas de coupure de texte */
+    display: inline-block;
     transition: color 0.3s ease;
 }
 
@@ -91,7 +93,7 @@ header p {
 }
 
 section {
-    padding: 60px 20px 50px; /* Espace pour le menu fixe */
+    padding: 40px 20px; /* Espace pour le menu fixe */
     text-align: center;
 }
 
@@ -221,16 +223,17 @@ footer {
     margin-top: 20px;
 }
 
+/* Media queries pour ajuster sans changer la direction */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
     }
     .nav-menu ul li a {
-        font-size: 0.8rem; /* Encore plus petit pour petits écrans */
+        font-size: 0.7rem;
         padding: 6px 8px;
     }
     section {
-        padding-top: 50px; /* Ajusté pour menu compact */
+        padding-top: 40px;
     }
     .intro-section img, .service-image {
         max-width: 200px;
@@ -246,11 +249,12 @@ footer {
         font-size: 3.5rem;
     }
     .nav-menu ul li a {
-        font-size: 1rem; /* Taille légèrement plus grande pour desktop */
-        padding: 10px 15px;
+        font-size: 0.8rem;
+        padding: 8px 10px;
     }
     section {
         max-width: 1200px;
         margin: 0 auto;
+        padding-top: 40px;
     }
 }
